@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Mohit Joshi",
   tagline: "Building things for the web, one commit at a time.",
   bio: "I'm a software developer who loves turning ideas into fast, beautiful, and functional products. I work across the full stack — from pixel-perfect UIs to scalable backends. Always learning, always shipping.",
-  avatar: "/avatar.jpg", // Replace with your photo in /public/
+  avatar: "/avatar.jpeg", // Replace with your photo in /public/
   banner: "/banner.jpg", // Replace with your banner in /public/
   bannerQuote: "You make your own luck if you stay at it long enough.",
 
@@ -10,7 +10,7 @@ export const siteConfig = {
   socials: {
     github: "https://github.com/iamCoderMohit",
     twitter: "https://x.com/CoderMohitt",
-    linkedin: "https://linkedin.com/in/mohitjoshi18",
+    linkedin: "https://linkedin.com/in/mohittjoshi18",
     email: "mohitjoshiu@gmail.com",
   },
 

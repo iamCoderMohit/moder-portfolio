@@ -18,9 +18,11 @@ export default function About() {
           width: "96px", height: "96px", borderRadius: "9999px", overflow: "hidden",
           border: "3px solid var(--bg)", background: "var(--bg-card)",
           boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+          position: "relative",
         }}>
+          {/* Fallback initials — shown if image fails */}
           <div style={{
-            width: "100%", height: "100%",
+            position: "absolute", inset: 0,
             background: "linear-gradient(135deg, #F97316, #ea580c)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontFamily: "'Playfair Display', serif", fontSize: "2rem",
@@ -28,6 +30,18 @@ export default function About() {
           }}>
             MJ
           </div>
+          {/* Actual photo — place your image at /public/avatar.jpg */}
+          <img
+            src={siteConfig.avatar}
+            alt="Mohit Joshi"
+            style={{
+              position: "absolute", inset: 0,
+              width: "100%", height: "100%",
+              objectFit: "cover", borderRadius: "9999px",
+              zIndex: 10
+            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+          />
         </div>
       </div>
 

@@ -22,6 +22,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "About", href: "/#about" },
     { label: "Projects", href: "/projects" },
+    { label: "Resume", href: "/resume" },
     { label: "Contact", href: "/#contact" },
   ];
 
@@ -31,7 +32,6 @@ export default function Navbar() {
         .nav-links { display: flex; align-items: center; gap: 1.5rem; }
         .hamburger { display: none; }
         .mobile-menu { display: none; }
-
         @media (max-width: 540px) {
           .nav-links { display: none; }
           .hamburger { display: flex; }
@@ -50,7 +50,6 @@ export default function Navbar() {
           maxWidth: "720px", margin: "0 auto", padding: "0 1.5rem",
           height: "56px", display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
-          {/* Logo */}
           <Link href="/" style={{
             fontFamily: "'Playfair Display', serif", fontSize: "1.1rem",
             fontWeight: 600, color: "var(--text-primary)", textDecoration: "none",
@@ -114,20 +113,16 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile dropdown menu */}
+        {/* Mobile dropdown */}
         <div className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
-          style={{
-            flexDirection: "column", gap: "0", borderTop: "1px solid var(--border)",
-            background: "var(--bg)",
-          }}
+          style={{ flexDirection: "column", gap: "0", borderTop: "1px solid var(--border)", background: "var(--bg)" }}
         >
           {navLinks.map(({ label, href }) => (
             <Link key={label} href={href}
               onClick={() => setMenuOpen(false)}
               style={{
                 padding: "0.85rem 1.5rem", fontSize: "0.9rem", color: "var(--text-secondary)",
-                textDecoration: "none", borderBottom: "1px solid var(--border)",
-                transition: "color 0.2s ease",
+                textDecoration: "none", borderBottom: "1px solid var(--border)", transition: "color 0.2s ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-secondary)")}
